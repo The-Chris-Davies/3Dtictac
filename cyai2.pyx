@@ -2,6 +2,11 @@
 import serial
 import random
 
+# TODO: make AI more efficient, to allow for more depth (let's aim for depth 6 in <5s! (64^2 increase???)
+#		-use different algorithm? (not necessarily faster, but might win more)
+#		-is alpha-beta pruning useful? (probably)
+#		-use memoization!!! (AKA transposition tables)
+
 def checkwin(grid, int pos, int player):
 	cdef int x, y, z, i, win
 	x = pos%4

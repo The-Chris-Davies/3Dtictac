@@ -4,7 +4,7 @@ import random
 # TODO: make AI more efficient, to allow for more depth (4,5,or even 6 would be the best!!)
 #		-use different algorithm?
 #		-what is alpha-beta pruning?
-#		-use memoization!!!
+#		-use memoization!!! (transposition tables)
 def checkwin(grid, pos):
 	xyz = (pos%4, (pos/4)%4, pos/16)
 	win = [0 for x in xrange(12)]
