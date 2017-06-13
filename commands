@@ -1,0 +1,5 @@
+gcc <C_file_from_cython> -I<include_directory> -L<directory_containing_libpython> -l<name_of_libpython_without_lib_on_the_front> -o <output_file_name>
+
+cython --embed -o ai.c ai.py
+
+gcc -O2 -I/usr/include/python2.6 -o ai ai.c -lpython2.6 -lpthread -lm -lutil -ldl
