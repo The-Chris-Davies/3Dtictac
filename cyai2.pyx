@@ -5,7 +5,6 @@ import random
 # TODO: make AI more efficient, to allow for more depth (let's aim for depth 6 in <5s! (64^2 increase???)
 #		-use different algorithm? (not necessarily faster, but might win more)
 #		-is alpha-beta pruning useful? (probably)
-#		-use memoization!!! (AKA transposition tables)
 
 def checkwin(grid, int pos, int player):
 	cdef int x, y, z, i, win
@@ -127,10 +126,9 @@ while True:
 	g1 = list(str(bin(int(in1)))[2:].zfill(64))
 	g2 = list(str(bin(int(ser.readline())))[2:].zfill(64))
 	grid = map(lambda x,y:int(x)-int(y), g2,g1)[::-1]
-
 	pos, score = move(grid, depth)
 	if score == 0:
 		pos = random.randrange(0,64)
-	print bytes(pos%4) + bytes((pos/4)%4) + bytes(pos/16), score, '\n\n'
+	print grid, '\n', bytes(pos%4) + bytes((pos/4)%4) + bytes(pos/16), score, '\n\n'
 	ser.write(bytes(pos%4) + bytes((pos/4)%4) + bytes(pos/16))
 	

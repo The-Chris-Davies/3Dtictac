@@ -48,6 +48,9 @@ void loop(){
 			winner(player, checkWin());
 			break;
 		}
+		else if(~(data[0]^data[1]) == 0){
+			break;
+		}
 	}
 	Rb.blankDisplay();
 }
